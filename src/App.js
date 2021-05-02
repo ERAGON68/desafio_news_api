@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './components/Card';
+import NavReactB from './components/NavReactB';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import './app.css';
+import News from './components/pages/News'
+import Login from './components/pages/Login';
+import { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [user, setUser] = useState('');
+
+    return (
+        <Router>
+            <NavReactB />
+            <Switch>
+                <Route path="/login">
+                    <Login setUser={setUser} />
+                </Route>
+                <Route path="/news">
+                    <News currentUser={user} />
+                </Route>
+                <Route path="/" exact>Home</Route>
+                <Route path="/">404</Route>
+            </Switch>
+            Footer
+        </Router>
+    );
 }
-
-export default App;

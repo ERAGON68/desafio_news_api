@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from './components/Card';
+import CardProp from './components/CardProp';
 import NavReactB from './components/NavReactB';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import './app.css';

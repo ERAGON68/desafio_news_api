@@ -1,6 +1,6 @@
 import './card.css';
 
-export default function Card(props) {
+export default function CardProp(props) {
     return (
         <div className="container py-5">
             <div className="card fondo" style={{ width: '18rem' }}>
